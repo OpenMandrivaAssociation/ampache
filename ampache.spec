@@ -1,5 +1,5 @@
 %define name    ampache 
-%define version 3.3.3.2
+%define version 3.3.3.3
 %define release %mkrel 1
 
 Name:           %{name}
