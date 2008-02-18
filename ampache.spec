@@ -5,7 +5,7 @@
 Name:           %{name}
 Version:        %{version}
 Release:        %{release}
-Summary:        Ampache is a Web-based MP3/Ogg/RM/Flac/WMA/M4A manager
+Summary:        Web-based MP3/Ogg/RM/Flac/WMA/M4A manager
 License:        GPL
 Group:		Networking/WWW
 URL:            http://www.ampache.org
