@@ -1,6 +1,6 @@
 %define name    ampache 
-%define version 3.3.3.5
-%define release %mkrel 2
+%define version 3.4
+%define release %mkrel 1
 
 Name:           %{name}
 Version:        %{version}
@@ -9,7 +9,7 @@ Summary:        Web-based MP3/Ogg/RM/Flac/WMA/M4A manager
 License:        GPL
 Group:		Networking/WWW
 URL:            http://www.ampache.org
-Source:		http://www.ampache.org/downloads/%{name}-%{version}.tar.bz2
+Source:		http://www.ampache.org/downloads/%{name}-%{version}.tar.gz
 Patch0:		%name-browser.patch
 Requires:	apache, mysql, apache-mod_php, php-mysql, php-iconv
 # webapp macros and scriptlets
