@@ -1,6 +1,6 @@
 %define name    ampache 
 %define version 3.5.4
-%define release %mkrel 1
+%define release %mkrel 2
 
 Name:           %{name}
 Version:        %{version}
@@ -11,12 +11,13 @@ Group:		Networking/WWW
 URL:            http://www.ampache.org
 Source:		http://www.ampache.org/downloads/%{name}-%{version}.tar.gz
 Patch0:		%name-browser.patch
-Requires:	apache, mysql, apache-mod_php, php-mysql, php-iconv
-# webapp macros and scriptlets
-Requires(post):		rpm-helper >= 0.16-2mdv2007.0
-Requires(postun):	rpm-helper >= 0.16-2mdv2007.0
-BuildRequires:	rpm-helper >= 0.16-2mdv2007.0
-BuildRequires:	rpm-mandriva-setup >= 1.23-1mdv2007.0
+Requires:	apache-mod_php
+Requires:	php-iconv
+Requires:	php-mysql
+%if %mdkversion < 201010
+Requires(post):   rpm-helper
+Requires(postun):   rpm-helper
+%endif
 BuildArch:      noarch
 BuildRoot:      %{_tmppath}/%{name}-%{version}
 
@@ -44,6 +45,7 @@ cat > %{buildroot}%{_webappconfdir}/%{name}.conf <<EOF
 
 Alias /%{name} %{_var}/www/%{name}
 <Directory %{_var}/www/%{name}>
+    Order allow,deny
     Allow from all
 </Directory>
 EOF
@@ -52,10 +54,14 @@ EOF
 rm -rf %{buildroot}
 
 %post
+%if %mdkversion < 201010
 %_post_webapp
+%endif
 
 %postun
+%if %mdkversion < 201010
 %_postun_webapp
+%endif
 
 %files
 %defattr(-,root,root)
