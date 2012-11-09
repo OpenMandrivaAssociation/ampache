@@ -1,0 +1,51 @@
+--- modules/horde/Browser.php~	2007-04-26 08:01:18.000000000 +0200
++++ modules/horde/Browser.php	2007-04-26 20:33:13.920595066 +0200
+@@ -861,47 +861,7 @@
+      */
+     function wasFileUploaded($field, $name = null)
+     {
+-        require_once 'PEAR.php';
+-
+-        if (is_null($name)) {
+-            $name = _("file");
+-        }
+-
+-        if (!($uploadSize = Browser::allowFileUploads())) {
+-            return PEAR::raiseError(_("File uploads not supported."));
+-        }
+-
+-        /* Get any index on the field name. */
+-        require_once 'Horde/Array.php';
+-        $index = Horde_Array::getArrayParts($field, $base, $keys);
+-
+-        if ($index) {
+-            /* Index present, fetch the error var to check. */
+-            $keys_path = array_merge(array($base, 'error'), $keys);
+-            $error = Horde_Array::getElement($_FILES, $keys_path);
+-
+-            /* Index present, fetch the tmp_name var to check. */
+-            $keys_path = array_merge(array($base, 'tmp_name'), $keys);
+-            $tmp_name = Horde_Array::getElement($_FILES, $keys_path);
+-        } else {
+-            /* No index, simple set up of vars to check. */
+-            if (!isset($_FILES[$field])) {
+-                return PEAR::raiseError(_("No file uploaded"), UPLOAD_ERR_NO_FILE);
+-            }
+-            $error = $_FILES[$field]['error'];
+-            $tmp_name = $_FILES[$field]['tmp_name'];
+-        }
+-
+-        if (!isset($_FILES) || ($error == UPLOAD_ERR_NO_FILE)) {
+-            return PEAR::raiseError(sprintf(_("There was a problem with the file upload: No %s was uploaded."), $name), UPLOAD_ERR_NO_FILE);
+-        } elseif (($error == UPLOAD_ERR_OK) && is_uploaded_file($tmp_name)) {
+-            return true;
+-        } elseif (($error == UPLOAD_ERR_INI_SIZE) ||
+-                  ($error == UPLOAD_ERR_FORM_SIZE)) {
+-            return PEAR::raiseError(sprintf(_("There was a problem with the file upload: The %s was larger than the maximum allowed size (%d bytes)."), $name, $uploadSize), $error);
+-        } elseif ($error == UPLOAD_ERR_PARTIAL) {
+-            return PEAR::raiseError(sprintf(_("There was a problem with the file upload: The %s was only partially uploaded."), $name), $error);
+-        }
++    	return null;
+     }
+ 
+     /**
