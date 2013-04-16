@@ -1,6 +1,6 @@
 %define name    ampache 
 %define version 3.5.4
-%define release %mkrel 3
+%define release: 4
 
 Name:           %{name}
 Version:        %{version}
@@ -53,15 +53,7 @@ EOF
 %clean
 rm -rf %{buildroot}
 
-%post
-%if %mdkversion < 201010
-%_post_webapp
-%endif
 
-%postun
-%if %mdkversion < 201010
-%_postun_webapp
-%endif
 
 %files
 %defattr(-,root,root)
