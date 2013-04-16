@@ -1,6 +1,6 @@
 %define name    ampache 
 %define version 3.5.4
-%define release: 4
+%define release: 5
 
 Name:           %{name}
 Version:        %{version}
