@@ -1,10 +1,6 @@
-%define name    ampache 
-%define version 3.5.4
-%define release: 5
-
-Name:           %{name}
-Version:        %{version}
-Release:        %{release}
+Name:           ampache
+Version:        3.5.4
+Release:        5
 Summary:        Web-based MP3/Ogg/RM/Flac/WMA/M4A manager
 License:        GPL
 Group:		Networking/WWW
@@ -14,12 +10,7 @@ Patch0:		%name-browser.patch
 Requires:	apache-mod_php
 Requires:	php-iconv
 Requires:	php-mysql
-%if %mdkversion < 201010
-Requires(post):   rpm-helper
-Requires(postun):   rpm-helper
-%endif
 BuildArch:      noarch
-BuildRoot:      %{_tmppath}/%{name}-%{version}
 
 %description
 Ampache is a Web-based MP3/Ogg/RM/Flac/WMA/M4A manager.
