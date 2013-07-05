@@ -1,6 +1,6 @@
 Name:           ampache
 Version:        3.5.4
-Release:        5
+Release:        6
 Summary:        Web-based MP3/Ogg/RM/Flac/WMA/M4A manager
 License:        GPL
 Group:		Networking/WWW
@@ -36,8 +36,7 @@ cat > %{buildroot}%{_webappconfdir}/%{name}.conf <<EOF
 
 Alias /%{name} %{_var}/www/%{name}
 <Directory %{_var}/www/%{name}>
-    Order allow,deny
-    Allow from all
+	Require all granted
 </Directory>
 EOF
 
