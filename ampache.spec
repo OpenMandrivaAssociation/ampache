@@ -4,7 +4,7 @@ Release:        1
 Summary:        Web-based MP3/Ogg/RM/Flac/WMA/M4A manager
 License:        GPL
 Group:		Networking/WWW
-URL:            http://www.ampache.org
+URL:            https://www.ampache.org
 Source:		https://github.com/ampache/ampache/archive/refs/tags/%{version}.tar.gz
 Requires:	apache-mod_php
 Requires:	php-iconv
