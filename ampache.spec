@@ -1,5 +1,5 @@
 Name:           ampache
-Version:        7.0.1
+Version:        7.1.0
 Release:        1
 Summary:        Web-based MP3/Ogg/RM/Flac/WMA/M4A manager
 License:        GPL
