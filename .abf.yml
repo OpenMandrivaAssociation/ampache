@@ -1,2 +1,4 @@
 sources:
-  7.10.0.tar.gz: 62347f3e27b3ac6103740bc5637bb4349969541a
+  ampache-8.4.0.tar.gz: 62d2685665db8e16f55e0a93baa4c26d51700cd0
+  ampache-8.4.0-vendor.tar.xz: a59b8015a1756b4b9efdbbfbf4600e3e0521c5e6
+  ampache-8.4.0-assets.tar.xz: 8f4122c4c6af444e1bd1f374b2404f3e32e792e9
